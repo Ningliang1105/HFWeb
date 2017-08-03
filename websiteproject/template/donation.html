@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block main %}
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">{{ datetime }}</span>
+									<h1>This is a<br />
+									Generic Page</h1>
+									<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
+									facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
+									amet nullam sed etiam veroeros.</p>
+								</header>
+						<div class="image main"><img src="{% static 'images/pic01.jpg'%}" alt="" /></div>
+								{%for book in book_list %}
+								<p>
+								{{book.book_name}}
+								</p>
+								<p>
+								{{book.post_time}}
+								</p>
+								{% empty %}
+								<div class="no-post">暂时还没有发布的书籍</div>
+								{% endfor %}
+							</section>
+
+					</div>
+
+{% endblock main %}
